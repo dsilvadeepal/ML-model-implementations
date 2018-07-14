@@ -11,7 +11,7 @@ Various Machine Learning model implementations in R
 
 
 ## Regression 
-- [ ]Simple Linear
+- [ ] Simple Linear
 - [ ] Multiple Linear
 - [ ] Regression Trees 
 - [ ] Support Vector Regression (SVR)
