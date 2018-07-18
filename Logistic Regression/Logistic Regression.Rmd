@@ -1,0 +1,103 @@
+---
+title: "Logistic Regression"
+output: html_notebook
+---
+
+Introduction
+
+World Health Organization has estimated 12 million deaths occur worldwide, every year due to Heart diseases. Half the deaths in the United States and other developed countries are due to cardio vascular diseases. The early prognosis of cardiovascular diseases can aid in making decisions on lifestyle changes in high risk patients and in turn reduce the complications. This research intends to pinpoint the most relevant/risk factors of heart disease as well as predict the overall risk using logistic regression.
+
+Source
+
+The dataset is publically available on the Kaggle website, and it is from an ongoing ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. The classification goal is to predict whether the patient has 10-year risk of future coronary heart disease (CHD).The dataset provides the patients' information. It includes over 4,000 records and 15 attributes.
+
+Importing Packages
+
+```{r}
+library(tidyverse) # metapackage with lots of helpful functions
+library(caTools)
+library(ROCR)
+```
+
+
+Importing and summarizing data
+
+```{r}
+framingham = read.csv("framingham.csv")
+
+str(framingham)
+summary(framingham)
+```
+
+Target variable - 10 year risk of coronary heart disease CHD (binary: "1", means "Yes", "0" means "No")
+
+
+Randomly spliting the data into train and test sets
+
+```{r}
+set.seed(500)
+split = sample.split(framingham$TenYearCHD, SplitRatio = 0.70)
+
+train = subset(framingham, split==TRUE)
+test = subset(framingham, split==FALSE)
+```
+
+
+1. Logistic Regression Model - Using all variables
+
+```{r}
+framinghamLog = glm(TenYearCHD ~ ., data = train, family=binomial)
+summary(framinghamLog)
+```
+
+
+Predictions on the test set and Confusion matrix with threshold of 0.5.
+
+```{r}
+predictTest = predict(framinghamLog, type="response", newdata=test)
+table(test$TenYearCHD, predictTest > 0.5)
+
+```
+
+Accuracy
+```{r}
+(926 + 18)/(926 + 13 + 145 + 18)
+
+```
+
+Computing the AUC on the Test Data
+```{r}
+ROCRpred = prediction(predictTest, test$TenYearCHD)
+as.numeric(performance(ROCRpred, "auc")@y.values)
+```
+
+
+2. Improved Logistic Regression - removing insignificant variables
+```{r}
+framinghamLog = glm(TenYearCHD ~   .-education-BMI-diaBP-BPMeds-diabetes-prevalentStroke-heartRate-currentSmoker, data = train, family=binomial)
+
+summary(framinghamLog)
+
+
+```
+
+Predictions on the test set and Confusion matrix with threshold of 0.5.
+```{r}
+predictTest = predict(framinghamLog, type="response", newdata=test)
+table(test$TenYearCHD, predictTest > 0.5)
+```
+
+Accuracy
+```{r}
+(969 + 19) / (969 + 9 + 156 +19)
+
+```
+
+Computing the AUC on the Test Data
+```{r}
+ROCRpred = prediction(predictTest, test$TenYearCHD)
+as.numeric(performance(ROCRpred, "auc")@y.values)
+```
+
+
+We see that the Area Under Curve (AUC) increases in the improved logistic regression model.
