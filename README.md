@@ -2,7 +2,7 @@
 Various Machine Learning model implementations in R
 
 ## Classification
-- [ ] Logistic Regression
+- [x] Logistic Regression
 - [ ] Decision Trees
 - [ ] Random Forests
 - [ ] K-Nearest Neighbours (KNN)
