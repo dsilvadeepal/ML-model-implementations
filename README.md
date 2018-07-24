@@ -3,17 +3,17 @@ Various Machine Learning model implementations in R
 
 ## Classification
 - [x] Logistic Regression
-- [ ] Decision Trees
+- [x] Decision Tree
 - [ ] Random Forests
 - [ ] K-Nearest Neighbours (KNN)
 - [ ] Support Vector Model(SVM) & Kernel SVM
 - [ ] Naive Bayes
 
 
-## Regression 
+## Regression
 - [ ] Simple Linear
 - [ ] Multiple Linear
-- [ ] Regression Trees 
+- [ ] Regression Trees
 - [ ] Support Vector Regression (SVR)
 
 
