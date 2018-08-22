@@ -38,3 +38,7 @@ model <- svm(species ~ .,
 
 predictions<-table(predict(model,test),test$species)
 sum(diag(predictions))/sum(predictions)
+
+
+plot(model, iris, petalwidthcm  ~ petallengthcm,
+     slice = list(sepalwidthcm = 3, sepallengthcm = 4))

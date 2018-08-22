@@ -6,9 +6,9 @@ Various Machine Learning model implementations in R
 - [x] Decision Tree
 - [x] Random Forests
 - [x] XG Boost (Extreme Gradient Boosting)
-- [ ] Naive Bayes
-- [ ] K-Nearest Neighbours (KNN)
-- [ ] Support Vector Model(SVM) & Kernel SVM
+- [x] Naive Bayes
+- [x] Support Vector Model(SVM)
+- [x] K-Nearest Neighbours (K-NN)
 
 
 
