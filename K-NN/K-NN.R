@@ -1,19 +1,14 @@
 setwd("C:/Users/dsilv/Desktop/Learning/Data Science/ML-model-implementations/K-NN")
 
 library(class)
-library(ggvis)
+library(ggplot2)
 
 iris <- read.csv("Iris.csv", -1)
 
 iris <- iris[, -1]
 
-iris %>% 
-  ggvis(~PetalWidthCm, ~PetalLengthCm, fill = ~Species) %>%
-  layer_points()
-
-iris %>% 
-  ggvis(~SepalWidthCm, ~SepalLengthCm, fill = ~Species) %>%
-  layer_points()
+iris %>% ggplot(aes(PetalLengthCm, PetalWidthCm, color = Species)) + geom_jitter() + 
+  scale_color_manual(values=c("mediumpurple3", "violetred3", "darkturquoise"))
 
 
 table(iris$Species)
