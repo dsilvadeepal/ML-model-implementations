@@ -11,8 +11,7 @@ Various Machine Learning model implementations in R
 - [x] K-Nearest Neighbours (K-NN)
 
 ## Regression
-- [ ] Simple Linear
-- [ ] Multiple Linear
+- [x] Simple/Multiple Linear Regression
 - [ ] Regression Trees
 - [ ] Support Vector Regression (SVR)
 
@@ -29,7 +28,8 @@ Various Machine Learning model implementations in R
 - [ ] Hyperparameter Tuning for each model
 
 
-## Artificial Neural Networks  (need to research more on this - especially the R packages for it or if I need to brush up my Python skills)
+## Artificial Neural Networks
+# (need to research more on this - especially the R packages for it or if I need to brush up my Python skills)
 - [ ] MLP
 - [ ] RNN
 - [ ] CNN
