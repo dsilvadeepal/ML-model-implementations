@@ -1,6 +1,7 @@
 # ML-model-implementations
 Various Machine Learning model implementations in R
 
+# Part 1
 ## Classification
 - [x] Logistic Regression
 - [x] Decision Tree
@@ -12,9 +13,9 @@ Various Machine Learning model implementations in R
 
 ## Regression
 - [x] Simple/Multiple Linear Regression
-- [ ] Regression Trees
-- [ ] Support Vector Regression (SVR)
+- [x] Regression Trees
 
+# Part 2
 ## Clustering
 - [ ] K-Means
 - [ ] Hierarchial
