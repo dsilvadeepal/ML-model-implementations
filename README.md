@@ -30,7 +30,6 @@ Various Machine Learning model implementations in R
 
 
 ## Artificial Neural Networks
-# (need to research more on this - especially the R packages for it or if I need to brush up my Python skills)
 - [ ] MLP
 - [ ] RNN
 - [ ] CNN
